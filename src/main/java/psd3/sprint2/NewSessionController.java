@@ -1,5 +1,7 @@
 package psd3.sprint2;
 
+import java.util.ArrayList;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -29,7 +31,7 @@ public class NewSessionController {
 				" Repeat frequency: " + s.getRepeatFrequency() + 
 				" Lecturer: " + s.getLecturer() +
 				" Max attendance: " + s.getMaxAttendance() + 
-				//"Compulsory: " + s.isCompulsary() + 
+				" Compulsory: " + s.isCompulsary() + 
 				" Venue: " + s.getVenue()
 				);
 		//Save to database
