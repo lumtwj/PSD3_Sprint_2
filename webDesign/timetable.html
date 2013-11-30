@@ -24,56 +24,40 @@ table#table1{
     margin-right:auto; 	
 }
 
+.auto-style2 {
+	border: 2px solid #000000;
+}
+.auto-style3 {
+	border: 2px solid #FF0000;
+	background-color: #FFFF00;
+}
+
 </style>
 </head>
 <body>
  <div id="divMain" >
-<form action="timetable.html"method="post">
-	<strong>Session
-	</strong>
-	<table id="table1" style="width:30%"><tr>
-		<td style=" width: 20%"><strong>Date:</strong></td>
-		<td style="width:90%;">	
-	<input type="text" id="datetimepicker4" style="width: 80%;"/>
-	<input id="open" type="button" value="open" style="width:18%;"/>
-	</td>
+	<strong>TimeTable</strong><table id="table1" style="width:30%"><tr>
+	<td><select id="timetable" name="Select1" style="width: 100%" >
+	<option value="">Click to Select</option>
+	<option value="daily">Daily</option>
+	<option value="weekly">Weekly</option>
+	<option value="all">All</option>
+	</select></td>
 	</tr>
-		<tr>
-		<td style="width: 20%"><strong>Duration</strong></td><td style="width: 90%">	
-	<input type="text" id="datetimepicker5" style="width: 100%;"/>
-	</td>
-	</tr>
-	<tr><td style="width: 20%"><strong>Repeat Frequency</strong></td><td>	
-	<input type="text" id="datetimepicker6" style=" width: 100%;"/></td></tr>
-	<tr><td style="width: 20%"><strong>Lecturer</strong></td><td>	
-	<input type="text" id="datetimepicker6" style="width: 100%;"/></td></tr>
-	<tr><td style="width: 20%"><strong>Max Attendance</strong></td><td>	
-	<input type="text" id="datetimepicker6" style="width: 100%;"/></td></tr>
-	<tr><td style="width: 20%"><strong>Compulsary</strong></td><td>	
-	<input type="text" id="datetimepicker6" style="width: 100%;"/></td></tr>
-	<tr><td style="width: 20%"><strong>Venue</strong></td><td>	
-	<input type="text" id="datetimepicker6" style="width: 100%;"/></td></tr>
-
-	<tr>
-
-	<td style="width: 10%"></td><td style="width: 206px">	
-	<input name="Button3" type="submit" value="Submit" style="width: 50%" /><input name="Button4" type="reset" value="Clear" style="width: 50%" /></td></tr>
-
 	</table>
-</form>
+<center>
+<table class="auto-style2" visible="false"><tr>
+<td class="auto-style3"><strong>Date</strong></td>
+<td class="auto-style3"><strong>Module</strong></td>
+<td class="auto-style3"><strong>Time</strong></td>
+<td class="auto-style3"><strong>Duration</strong></td>
+<td class="auto-style3"><strong>Repeat Frequency</strong></td>
+<td class="auto-style3"><strong>Lecturer</strong></td>
+<td class="auto-style3"><strong>Max Attendance</strong></td>
+<td class="auto-style3"><strong>Compulsary</strong></td>
+<td class="auto-style3"><strong>Venue</strong></td>
+</tr></table></center>
 </div>
 </body>
-<script src="./jquery.js"></script>
-<script src="./jquery.datetimepicker.js"></script>
-<script>
-$('#datetimepicker4').datetimepicker();
-$('#open').click(function(){
-	$('#datetimepicker4').datetimepicker('show');
-});
-$('#close').click(function(){
-	$('#datetimepicker4').datetimepicker('hide');
-});
-</script>
-
 </html>
 
