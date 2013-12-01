@@ -23,8 +23,19 @@ public class NewSessionController {
 	@RequestMapping(value="/NewSession", method=RequestMethod.POST)
 	public String saveSession(@ModelAttribute(value="sess") SessionSetup s, Model model) {
 		//Process form
-		model.addAttribute("name", "Successfully saved session: " + s.getName());
+		model.addAttribute("name", "Successfully saved session:" +
+				" Date: " + s.getDate() + 
+				" Duration: " + s.getDuration() +
+				" Repeat frequency: " + s.getRepeatFrequency() + 
+				" Lecturer: " + s.getLecturer() +
+				" Max attendance: " + s.getMaxAttendance() + 
+				" Compulsory: " + s.isCompulsary() + 
+				" Venue: " + s.getVenue()
+				);
 		//Save to database
+		
+		//Clear the forms
+		model.addAttribute("sess", new SessionSetup());
 
 		return "NewSession";
 	}
