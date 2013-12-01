@@ -26,3 +26,10 @@ PSD3 Sprint 2
 ---
 
 ## How to run the project
+
+1. Right click on the project
+2. Select run as > Gradle Build
+3. Check build and runjar
+4. Wait for Spring to start the server, proceed only when you see the following:
+ * Started Application in 4.271 seconds
+5. The server is up, open your browser and procced to [localhost:8080](http://localhost:8080/NewSession)
