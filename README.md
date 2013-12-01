@@ -29,7 +29,16 @@ PSD3 Sprint 2
 
 1. Right click on the project
 2. Select run as > Gradle Build
-3. Check build and runjar
+3. Check build (and runjar if you want to run the server directly from STS) **
 4. Wait for Spring to start the server, proceed only when you see the following:
  * Started Application in 4.271 seconds
 5. The server is up, open your browser and procced to [localhost:8080](http://localhost:8080/NewSession)
+
+** Alternatively, you can use the following command to start the server:
+
+```
+java -jar <jar files from build>
+```
+
+The jar files can be found in the project via the following directory:
+* build > libs > psd3-sprint2-0.1.0.jar
