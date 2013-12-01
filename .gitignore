@@ -2,5 +2,4 @@
 *.jar
 bin/
 build/
-.setting/
 .gradle/

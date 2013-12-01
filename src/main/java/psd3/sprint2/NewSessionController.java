@@ -1,7 +1,5 @@
 package psd3.sprint2;
 
-import java.util.ArrayList;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -35,6 +33,9 @@ public class NewSessionController {
 				" Venue: " + s.getVenue()
 				);
 		//Save to database
+		
+		//Clear the forms
+		model.addAttribute("sess", new SessionSetup());
 
 		return "NewSession";
 	}
