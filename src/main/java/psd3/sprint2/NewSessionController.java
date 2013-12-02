@@ -15,9 +15,9 @@ import psd3.sprint2.object.SessionSetup;
 @Controller
 public class NewSessionController {
 	@RequestMapping(value="/NewSession", method=RequestMethod.GET)
-	public String newSession(@RequestParam(value="name", required=false, defaultValue="World") String name, Model model) {
+	public String newSession(@RequestParam(value="message", required=false, defaultValue="") String message, Model model) {
 		//Load form
-		model.addAttribute("name", name);
+		model.addAttribute("message", message);
 		model.addAttribute("sess", new SessionSetup());
 
 		return "NewSession";
@@ -26,16 +26,8 @@ public class NewSessionController {
 	@RequestMapping(value="/NewSession", method=RequestMethod.POST)
 	public String saveSession(@ModelAttribute(value="sess") SessionSetup s, Model model) {
 		//Process form
-		model.addAttribute("name", "Successfully saved session:" +
-				" Date: " + s.getDate() + 
-				" Time: " + s.getTime() +
-				" Duration: " + s.getDuration() +
-				" Repeat frequency: " + s.getRepeatFrequency() + 
-				" Lecturer: " + s.getLecturer() +
-				" Max attendance: " + s.getMaxAttendance() + 
-				" Compulsory: " + s.isCompulsary() + 
-				" Venue: " + s.getVenue()
-				);
+		model.addAttribute("message", "Session has been added");
+
 		//Save to database
 		try {
 			FileWriter f = new FileWriter("newSession.csv", true);
