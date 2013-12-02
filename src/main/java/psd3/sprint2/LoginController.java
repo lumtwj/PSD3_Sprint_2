@@ -13,7 +13,7 @@ public class LoginController {
 	@RequestMapping(value="login", method=RequestMethod.GET)
 	public String login(Model model) {
 		model.addAttribute("sesslogin", new SessionSetupLogin());
-		model.addAttribute("name","");
+		model.addAttribute("message","");
 
 		return "login";
 	}
@@ -21,16 +21,14 @@ public class LoginController {
 
 	@RequestMapping(value="login", method=RequestMethod.POST)
 	public String saveSession(@ModelAttribute(value="sesslogin") SessionSetupLogin sesslogin, Model model) {
-		//Process form
-
-
+		//Process login
 		if (sesslogin.getLogin().equals("admin") && sesslogin.getPassword().equals("admin")) {
 			return "redirect:/NewSession";
 		}
 		else if(sesslogin.getLogin().equals("user") && sesslogin.getPassword().equals("user")){
 			return "redirect:/timetable";
 		}else{
-			model.addAttribute("name","Wrong password/username");
+			model.addAttribute("message", "Wrong password/username");
 		}
 
 		return "login";
