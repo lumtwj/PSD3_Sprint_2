@@ -1,12 +1,28 @@
-<!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html5 PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+&nbsp;
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
 <head>
-<title>Getting Started: Serving Web Content</title>
-<link rel="stylesheet" type="text/css"
-	href="jquery.datetimepicker.css" />
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>Session</title>
+<link rel="stylesheet"
+	href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css"></link>
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<script>
+	$(function() {
+		$("#datepicker").datepicker({
+			beforeShowDay : $.datepicker.noWeekends,
+			minDate : '1'
+
+		});
+	});
+</script>
 <style type="text/css">
 body {
-	background-image: url('https://raw.github.com/mOcentury/PSD3_Sprint_2/master/webDesign/iron_texture1744.jpg');
+	background-image:
+		url('https://raw.github.com/mOcentury/PSD3_Sprint_2/master/webDesign/iron_texture1744.jpg');
 }
 
 #divMain {
@@ -28,6 +44,65 @@ table#table1 {
 .auto-style1 {
 	font-size: x-large;
 }
+var
+
+
+ 
+
+
+$
+datepicker
+
+
+ 
+
+
+=
+$('
+#ui-datepicker-div
+
+
+
+
+');
+$
+datepicker
+
+
+
+
+.css
+
+
+ 
+
+
+({
+top
+
+
+
+
+:
+
+
+
+
+10
+,
+left
+
+
+
+
+:
+
+
+
+
+10)
+}
+);
 </style>
 </head>
 <body>
@@ -38,44 +113,69 @@ table#table1 {
 			<strong><span class="auto-style1">Session</span> </strong>
 			<table id="table1" style="width: 30%">
 				<tr>
-					<td style="width: 20%"><strong>Date:</strong></td>
-					<td style="width: 90%;"><input type="text" th:field="*{date}"
-						style="width: 80%;" /> <input id="open" type="button"
-						value="open" style="width: 18%;" /></td>
+					<td style="width: 30%"><strong>Date:</strong></td>
+					<td style="width: 90%;"><input id="datepicker" type="text"
+						th:field="*{date}" style="width: 100%;" /></td>
 				</tr>
 				<tr>
-					<td style="width: 20%"><strong>Duration</strong></td>
-					<td style="width: 90%"><input type="text"
-						th:field="*{duration}" style="width: 100%;" /></td>
+					<td style="width: 30%"><strong>Time</strong></td>
+					<td style="width: 90%"><select th:field="*{time}"
+						style="width: 100%">
+							<option value="">Select Time</option>
+							<option value="0900">0900</option>
+							<option value="1000">1000</option>
+							<option value="1100">1100</option>
+							<option value="1200">1200</option>
+							<option value="1300">1300</option>
+							<option value="1400">1400</option>
+							<option value="1500">1500</option>
+							<option value="1600">1600</option>
+							<option value="1700">1700</option>
+							<option value="1800">1800</option>
+					</select></td>
+				</tr>
+
+				<tr>
+					<td style="width: 30%"><strong>Duration</strong></td>
+					<td style="width: 90%"><select th:field="*{duration}"
+						style="width: 100%">
+							<option value="0">Select Duration</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							<option value="6">6</option>
+					</select></td>
 				</tr>
 				<tr>
-					<td style="width: 20%"><strong>Repeat Frequency</strong></td>
+					<td style="width: 30%"><strong>Repeat Frequency</strong></td>
 					<td><input type="text" th:field="*{repeatFrequency}"
 						style="width: 100%;" /></td>
 				</tr>
 				<tr>
-					<td style="width: 20%"><strong>Lecturer</strong></td>
+					<td style="width: 30%"><strong>Lecturer</strong></td>
 					<td><input type="text" th:field="*{lecturer}"
 						style="width: 100%;" /></td>
 				</tr>
 				<tr>
-					<td style="width: 20%"><strong>Max Attendance</strong></td>
+					<td style="width: 30%"><strong>Max Attendance</strong></td>
 					<td><input type="text" th:field="*{maxAttendance}"
 						style="width: 100%;" /></td>
 				</tr>
 				<tr>
-					<td style="width: 20%"><strong>Compulsary</strong></td>
+					<td style="width: 30%"><strong>Compulsary</strong></td>
 					<td><input type="checkbox" th:field="*{compulsary}" /></td>
 				</tr>
 				<tr>
-					<td style="width: 20%"><strong>Venue</strong></td>
+					<td style="width: 30%"><strong>Venue</strong></td>
 					<td><input type="text" th:field="*{venue}"
 						style="width: 100%;" /></td>
 				</tr>
 
 				<tr>
 
-					<td style="width: 10%"></td>
+					<td style="width: 40%"></td>
 					<td style="width: 206px"><input name="Button3" type="submit"
 						value="Submit" style="width: 50%" /><input name="Button4"
 						type="reset" value="Clear" style="width: 50%" /></td>
@@ -85,15 +185,5 @@ table#table1 {
 		</form>
 	</div>
 </body>
-<script src="jquery.js"></script>
-<script src="jquery.datetimepicker.js"></script>
-<script>
-	$('#datetimepicker4').datetimepicker();
-	$('#open').click(function() {
-		$('#datetimepicker4').datetimepicker('show');
-	});
-	$('#close').click(function() {
-		$('#datetimepicker4').datetimepicker('hide');
-	});
-</script>
 </html>
+
