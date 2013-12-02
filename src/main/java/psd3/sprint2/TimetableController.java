@@ -42,7 +42,7 @@ public class TimetableController {
 
 			scan.close();
 
-			model.addAttribute("joetest", ssal);
+			model.addAttribute("sessal", ssal);
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
