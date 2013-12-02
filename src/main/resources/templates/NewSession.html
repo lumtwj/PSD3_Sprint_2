@@ -47,19 +47,25 @@ table#table1 {
 var
 
 
+
  
+
 
 
 $
 datepicker
 
 
+
  
+
 
 
 =
 $('
 #ui-datepicker-div
+
+
 
 
 
@@ -71,10 +77,14 @@ datepicker
 
 
 
+
+
 .css
 
 
+
  
+
 
 
 ({
@@ -83,7 +93,11 @@ top
 
 
 
+
+
 :
+
+
 
 
 
@@ -95,7 +109,11 @@ left
 
 
 
+
+
 :
+
+
 
 
 
@@ -106,7 +124,7 @@ left
 </style>
 </head>
 <body>
-	<p th:text="'Hello, ' + ${name} + '!'" />
+	<p th:text="${message}" />
 	<div id="divMain">
 		<form action="#" th:action="@{/NewSession}" th:object="${sess}"
 			method="post">
@@ -139,7 +157,7 @@ left
 					<td style="width: 30%"><strong>Duration</strong></td>
 					<td style="width: 90%"><select th:field="*{duration}"
 						style="width: 100%">
-							<option value="0">Select Duration</option>
+							<option value="">Select Duration</option>
 							<option value="1">1</option>
 							<option value="2">2</option>
 							<option value="3">3</option>
