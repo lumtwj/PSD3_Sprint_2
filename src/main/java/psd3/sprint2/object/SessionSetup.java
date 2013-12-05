@@ -1,8 +1,8 @@
 package psd3.sprint2.object;
 
 public class SessionSetup {
-	String name;
-	String date;
+	String title;
+	String start;
 	String time;
 	String venue;
 	String duration;
@@ -15,12 +15,12 @@ public class SessionSetup {
 
 	}
 
-	public SessionSetup(String name, String date, String time, String venue,
+	public SessionSetup(String title, String start, String time, String venue,
 			String duration, String repeatFrequency, String lecturer,
 			int maxAttendance, boolean compulsary) {
 		super();
-		this.name = name;
-		this.date = date;
+		this.title = title;
+		this.start = start;
 		this.time = time;
 		this.venue = venue;
 		this.duration = duration;
@@ -30,20 +30,20 @@ public class SessionSetup {
 		this.compulsary = compulsary;
 	}
 
-	public String getName() {
-		return name;
+	public String getTitle() {
+		return title;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setTitle(String title) {
+		this.title = title;
 	}
 
-	public String getDate() {
-		return date;
+	public String getStart() {
+		return start;
 	}
 
-	public void setDate(String date) {
-		this.date = date;
+	public void setStart(String start) {
+		this.start = start;
 	}
 
 	public String getTime() {

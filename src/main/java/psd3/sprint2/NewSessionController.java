@@ -14,7 +14,7 @@ import psd3.sprint2.object.SessionSetup;
 
 @Controller
 public class NewSessionController {
-	@RequestMapping(value="/NewSession", method=RequestMethod.GET)
+	@RequestMapping(value="NewSession", method=RequestMethod.GET)
 	public String newSession(@RequestParam(value="message", required=false, defaultValue="") String message, Model model) {
 		//Load form
 		model.addAttribute("message", message);
@@ -23,7 +23,7 @@ public class NewSessionController {
 		return "NewSession";
 	}
 
-	@RequestMapping(value="/NewSession", method=RequestMethod.POST)
+	@RequestMapping(value="NewSession", method=RequestMethod.POST)
 	public String saveSession(@ModelAttribute(value="sess") SessionSetup s, Model model) {
 		//Process form
 		model.addAttribute("message", "Session has been added");
@@ -31,7 +31,7 @@ public class NewSessionController {
 		//Save to database
 		try {
 			FileWriter f = new FileWriter("newSession.csv", true);
-			f.write(s.getDate() + "," + s.getDuration() + "," + s.getRepeatFrequency() + "," + s.getLecturer() + "," + s.getMaxAttendance() + "," + s.isCompulsary() + "," + s.getVenue() + "\n");
+			f.write(s.getTitle() + "," + s.getStart() + "," + s.getDuration() + "," + s.getRepeatFrequency() + "," + s.getLecturer() + "," + s.getMaxAttendance() + "," + s.isCompulsary() + "," + s.getVenue() + "\n");
 			f.close();
 		} 
 		catch (IOException e) {e.printStackTrace();}
