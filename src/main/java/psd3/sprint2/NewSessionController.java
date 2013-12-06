@@ -9,16 +9,23 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import psd3.sprint2.object.SessionSetup;
 
 @Controller
+@SessionAttributes("logintype")
 public class NewSessionController {
 	@RequestMapping(value="NewSession", method=RequestMethod.GET)
-	public String newSession(@RequestParam(value="message", required=false, defaultValue="") String message, Model model) {
-		//Load form
-		model.addAttribute("message", message);
-		model.addAttribute("sess", new SessionSetup());
+	public String newSession(@RequestParam(value="message", required=false, defaultValue="") String message, @ModelAttribute(value="logintype") String logintype, Model model) {
+		if (!logintype.equals("admin")) {
+			return "redirect:/login";
+		}
+		else {
+			//Load form
+			model.addAttribute("message", message);
+			model.addAttribute("sess", new SessionSetup());	
+		}
 
 		return "NewSession";
 	}

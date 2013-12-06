@@ -28,8 +28,10 @@
 				right : 'month,basicWeek,basicDay'
 			},
 			defaultView : 'basicWeek',
-			editable : true,
-			events : 'http://localhost:8080/json'
+			editable : false,
+			eventSources : [ {
+				url : "http://localhost:8080/json"
+			} ]
 		});
 
 	});
