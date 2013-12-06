@@ -29,34 +29,7 @@
 			},
 			defaultView : 'basicWeek',
 			editable : true,
-			events : [ {
-				title : 'Session : Lab1',
-				start : new Date(y, m, 1),
-			}, {
-				title : 'Session : Lecture 1',
-				start : new Date(y, m, 1)
-			}, {
-				title : 'Session : Lecture 2',
-				start : new Date(y, m, 6),
-			}, {
-				title : 'Session : Tutorial 1',
-				start : new Date(y, m, 4),
-			}, {
-				title : 'Session : Tutuorial 2',
-				start : new Date(y, m, 11),
-			}, {
-				title : 'Session : Lab 2',
-				start : new Date(y, m, 15),
-			}, {
-				title : 'Session : Tutuorial 3',
-				start : new Date(y, m, d - 5),
-			}, {
-				title : 'Session : Tutuorial 5',
-				start : new Date(y, m, 17),
-			}, {
-				title : 'Session : Tutuorial 6',
-				start : new Date(y, m, d - 25),
-			}, ]
+			events : 'http://localhost:8080/json'
 		});
 
 	});
@@ -85,10 +58,6 @@ p {
 
 </head>
 <body>
-	<select>
-		<option th:each="sessal : ${sessal}" th:value="${sessal.lecturer}"
-			th:text="${sessal.lecturer}">My option</option>
-	</select>
 	<div>
 		<p>Student 1</p>
 	</div>
